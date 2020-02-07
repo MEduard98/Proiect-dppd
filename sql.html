@@ -1,0 +1,124 @@
+<html>
+<head>
+  <title>Clasa a 12-a, sql</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="style.css">
+<head/>
+<body>
+  <div class="header">
+    <div class="inner_header">
+      <ul class="navigation">
+        <a href = "clasa9.html"><li>Clasa a IX-a</li></a>
+        <a href = "clasa10.html"><li>Clasa a X-a</li></a>
+        <a href = "clasa11.html"><li>Clasa a XI-a</li></a>
+        <a href = "clasa12.html"><li>Clasa a XII-a</li></a>
+      </ul>
+  </div>
+  </div>
+
+  <div class = "sidebar">
+    <button><a href="clasa11.html">Baze de date</a></button>
+    <button><a href="sql.html">SQL</a></button>
+  </div>
+
+  <div class = "main">
+    <h1>Sql</h1>
+<pre>
+    INTRODUCERE IN SQL:
+    Acest capitol realizeaza o introducere in limbajul de interogare utilizat pentru a accesa o baza de date Oracle. Multimea comenzilor SQL sunt conturate ca blocuri de interogare de baza.In particular, noi discutam declaratiile SQL folosite la:
+
+    - executia calculelor
+    - specificarea alternativa a capetelor de coloana
+    - concatenarea coloanelor
+    - sortarea rindurilor
+    - introducerea criteriilor de cautare.
+
+    Trasaturi caracteristice SQL
+
+- SQL este prezentat in limba engleza. Foloseste cuvintele select, insert,delete ca parti ale setului de comenzi.
+- SQL este un limbaj neprocedural :specifica ce informatii doresti,nu cum sa le obtii.Cu alte cuvinte SQL nu iti
+cere sa specifici metoda de acces la date.Toate cererile SQL folosesc optimizarea cererilor- o parte a RDBMS-
+pentru a determina rapid remedierea datelor specifi- cate.Aceste trasaturi usureaza obtinerea rezultatelor dorite.
+- Procesarea SQL asupra inregistrarilor nu se poate face decit asupra unei singure inregistrari la un moment dat.
+Cea mai comuna forma a unui set de inregistrari este un tabel.
+- SQL poate fi folosit de un sir de utilizatori incluzand DBA, programatori de aplicatii ,personal de management
+si multe alte tipuri de utilizatori.
+- SQL pune la dispozitie comenzi pentru o varietate de tascuri incluzand:
+
+- date interogate
+- inserarea,extragerea si stergerea rindurilor intr-un tabel.
+- crearea,modificarea si stergerea obiectelor de tip baza de date
+- controlul accesului la baza de date si la obiectele de tip baza de date.
+- garantarea consistentei bazei de date
+
+La inceput sistemele de management a bazei de date a utilizat un limbaj separat pentru fiecare categorie in parte.
+SQL le-a unificat pe toate acestea intr-un singur limbaj.
+
+Setul de comenzi SQL:
+Comanda + Descriere:
+
+SELECT
+este comanda cea mai utilizata ; este folosita pentru obtinerea datelor din bazele de date
+INSERT
+aceste trei comenzi sunt utilizate pentru a introduce noi
+UPDATE
+rinduri,pentru a schimba rindurile existente si stergerea
+DELETE
+rindurilor nedorite din tabelele bazelor de date respective. (Ele sunt cunoscute in ansamblu ca DML sau
+comenzi ale limbajului de manipulare a datelor.)
+CREATE
+aceste trei comenzi sunt utilizate dinamic pentru a crea ,
+ALTER
+utiliza si sterge orice structura de date,de exemplu,tabele,
+DROP
+expuneri ,indecsi.(Ele sunt cunoscute sub numele colectiv DDL sau comenzi ale limbajelor de definire a datelor).
+GRANT
+aceste doua comenzi sunt utilizate pentru a da sau a lua
+REVOKE
+drepturile de acces pentru bazele de date si structurile din Oracle.
+N.B. Acestea sunt o parte a comenzilor SQL. Pentru o lista mai completa de comenzi se recomanda - Manualul de
+ Referinta a Limbajului SQL-.
+
+
+ Scrierea comenzilor SQL
+Cand scriem comenzi SQL ,este important sa ne reamintim cateva reguli simple pentru construirea unor declaratii valide care sunt si usor de citit si de editat:
+Comenzile SQL pot fi pe una sau mai multe linii.
+Clauzele sunt uzual plasate pe linii separate.
+Tabelarea poate fi folosita.
+Cuvintele de comanda nu pot fi separate pe mai multe linii.
+Comenzile SQL nu sunt 'case sensitive'.
+O comanda SQL este introdusa la promptul SQL si liniile subsecventelor sunt numarate.
+O singura declaratie poate fi considerata curenta cat timp ea este in buffer si poate fi rulata intr-un numar de moduri :
+plasand un punct si virgula(;) la sfarsitul ultimei clauze.
+plasand un punct si virgula /slash la ultima linie in buffer.
+plasand un slash(/) la promptul SQL.
+scriind un RUN (comanda SQL) la promptul SQL.
+
+     Fiecare din urmatoarele declaratii sunt valide:
+
+         SELECT * FROM EMP;
+
+         SELECT
+         *
+         FROM
+         EMP
+         ;
+
+         SELECT *
+         FROM EMP;
+
+         Operatori sql:
+
+         Sint patru operatori SQL care opereaza pe toate tipuril de date:
+          Operatori SQL
+
+          Operator          Semnificatie
+          --------          ------------
+          BETWEEN..AND...   intre doua valori(inclusiv)
+          IN(list)          compara cu o lista de valori
+          LIKE              compara cu un model de tip caracter
+          IS NULL           estå o valoare nula
+
+</pre>
+</body>
+</html>

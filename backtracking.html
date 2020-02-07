@@ -1,0 +1,126 @@
+<html>
+<head>
+  <title>Clasa a 11-a, backtracking</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="style.css">
+<head/>
+<body>
+  <div class="header">
+    <div class="inner_header">
+      <ul class="navigation">
+        <a href = "clasa9.html"><li>Clasa a IX-a</li></a>
+        <a href = "clasa10.html"><li>Clasa a X-a</li></a>
+        <a href = "clasa11.html"><li>Clasa a XI-a</li></a>
+        <a href = "clasa12.html"><li>Clasa a XII-a</li></a>
+      </ul>
+  </div>
+  </div>
+
+  <div class = "sidebar">
+    <button><a href="clasa11.html">Grafuri neorientate</a></button>
+    <button><a href="grafuri_orientate.html">Grafuri orientate</a></button>
+    <button><a href="backtracking.html">Backtracking</a></button>
+  </div>
+
+  <div class = "main">
+    <h1>Backtracking</h1>
+
+<pre>
+  Backtracking-ul este un algoritm care ajută la rezolvarea problemelor unde trebuie
+  aflate toate soluțiile sale. Este un algoritm lent și poate de aceea nu întotdeauna
+  adoptat. Uneori e suficient să se afle câteva soluții sau e nevoie să se afle cea mai
+  bună soluție și pentru aceasta nu întotdeauna e nevoie de toate soluțiile.
+
+Acesta este un algoritm. Este o idee. Chiar dacă pașii sunt identici, fiecare trebuie ajustat
+ pentru problema cerută. Este o metodă, nu un program pe calculator pe care îl scrii o dată
+  și merge pentru orice problemă de acest tip.
+
+Descriere:
+
+Backtracking-ul construiește, bazându-se pe o stivă, soluția gradual. Se adaugă câte o "informație"
+ până la un anumit nivel, când se verifică dacă soluția e bună. De exemplu permutarea elementelor
+ {1, 2, 3}. Regula numărul 1 este că nu poți avea același element de mai multe ori, iar mărimea
+ soluției trebuie să fie de 3 elemente. Și elementele trebuie să fie numere de la 1 la 3 inclusiv.
+ Nu 4. Categoric nu 5.
+
+Așadar {1, 2} nu are 3 elemente, {1, 1, 2} poate avea 3 elemente, dar 1 apare de două ori, iar {1, 2, 4}
+ are elemente invalide.
+
+În funcție de situație trebuie luată o decizie. {1, 1, 2} nu este bună, dar avem deja 3 nivele. Ce putem
+face? Trecem următoarea valoare pentru nivelul curent al stivei (adică acolo unde e cifra 2). O să obținem
+ {1, 1, 3}. Dar iar nu e bine. Și nu mai avem o valoare succesivă celei de pe ultimului nivel. Așadar
+ presupunerea că primele două nivele sunt corecte e falsă și atunci coborâm în stivă cu un nivel: {1, 1}
+  și încercăm următoarea valoare: {1, 2}.
+
+Soluțiile generate de un algoritm backtracking pentru permutarea elementelor de la 1 la 3 ar fi:
+
+{1}
+{1, 1}
+{1, 1, 1}
+{1, 1, 2}
+{1, 1, 3}
+{1, 2}
+{1, 2, 1}
+{1, 2, 2}
+{1, 2, 3}
+{1, 3, 1}
+{1, 3, 2}
+...
+Abia în pasul 9 avem o soluție, de aceea algoritmul este definit ca lent.
+
+În alte cuvinte backtracking-ul e un bun locțiitor pentru toate mesajele de încurajare care tot apar
+ pe diferite site-uri. El ne zice: încearcă mereu altceva până când merge. Nu renunța niciodată, nu te
+  aștepta la același rezultat făcând lucrurile la fel, încearcă ceva nou. Nu merge? Revino la pasul
+  anterior și vezi cum îl poți continua în alt fel.
+
+Algoritm
+
+- nivelul curent al stivei ia valoarea 1
+- initializeaza nivelul curent al stivei
+- cat timp nivelul curent al stivei > 0
+- cat timp esta un succesor pentru nivelul curent
+- daca este valid atunci
+- daca este solutie atunci tipareste solutia
+altfel
+- incrementeaza nivelul stivei
+- initializeaza nivelul curent al stivei
+sfarsit daca
+sfarsit daca
+sfarsit cat timp
+- decrementeaza nivelul curent al stivei
+sfarsit cat timp
+
+Descriere:
+
+Algoritmul are mai mult sens dacă explicăm fiecare componentă a sa:
+
+1.inițializare: Această procedură inițializează valoarea de pe nivelul curent al stivei cu o valoare
+anterioară uneia valide. Ce vreau să spun? Dacă vrem să aflăm permutările mulțimii {2, 3, 4},
+ inițializarea îi va atribui nivelului curent al stivei valoarea 1. De ce? Fiindcă încrementând-o vom
+ obține prima valoare validă: 2.
+
+2.succesor: Ea este o funcție care determină elementul următor valid. E chemată exact după inițializare
+exact din motivul descris mai sus: pentru a determina o valoare validă pentru problema noastră. Dacă
+valoarea următoare este validă, funcția succesor va întoarce valoarea adevărat. Altfel, fals.
+
+3.valid: Este o funcție care determină dacă ce avem în acel moment în stivă este valid. În cazul nostru
+dat de exemplu, dacă avem mulțimea {1, 1} ea este invalidă. În cazul permutărilor nu putem avea acelaș
+element de două ori. Dacă mulțimea este {1, 2} atunci funcția va întoarce valoarea adevărat. Nu este o
+soluție dar este o mulțime validă.
+
+4.soluție: Ea este o funcție a cărui rol este de a determina dacă valorile din stivă reprezintă o soluție
+ pentru problema dată. Dacă avem o soluție va întoarce valoarea adevărat, altfel fals.
+
+5.tipărire: Este o procedură care pur și simplu tipărește valorile stivei.
+
+Algoritmul de backtracking (cel scris mai sus) rămâne același indiferent de situație. Ce se schimbă este
+ conținutul acestor 5 subprograme. Fiecare problemă de backtracking are o altă inițializare, o altă funcție
+ pentru succesor, valid și soluție și o altă tipărire.
+</pre>
+
+
+
+    </div>
+
+</body>
+</html>

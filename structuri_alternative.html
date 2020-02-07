@@ -1,0 +1,94 @@
+<html>
+<head>
+  <title>Clasa a 9-a, structuri alternative</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="style.css">
+<head/>
+<body>
+  <div class="header">
+    <div class="inner_header">
+      <ul class="navigation">
+        <a href = "clasa9.html"><li>Clasa a IX-a</li></a>
+        <a href = "clasa10.html"><li>Clasa a X-a</li></a>
+        <a href = "clasa11.html"><li>Clasa a XI-a</li></a>
+        <a href = "clasa12.html"><li>Clasa a XII-a</li></a>
+      </ul>
+  </div>
+  </div>
+
+  <div class = "sidebar">
+    <button><a href="clasa9.html">Tipuri de variabile</a></button>
+    <button><a href="algoritmi_elementari.html">Algoritmi elementari</a></button>
+    <button><a href="structuri_repetitive.html">Structuri repetitive</a></button>
+    <button><a href="structuri_alternative.html">Structuri alternative</a></button>
+    <button><a href="tablouri.html">Tablouri</a></button>
+  </div>
+
+  <div class = "main">
+    <h1>Instructiunea if</h1>
+
+    <p>
+      Instrucțiunea if este cea mai utilizată structură alternativă.<br><br>
+
+Sintaxa:<br>
+
+
+if ( Expresie )<br>
+    Instrucțiune1;<br>
+
+else<br>
+    Instrucțiune2;<br><br>
+
+    Mod de execuție:<br>
+
+Instrucțiunea if se execută în felul următor:<br>
+
+- se evaluează Expresia<br>
+- dacă valoarea ei este nenulă<br>
+- se execută Instrucțiune1;<br>
+- se continuă cu instrucțiunea care urmează după if<br>
+- dacă valoare expresiei este nulă<br>
+- dacă există clauza else<br>
+- se execută Instrucțiune2;<br>
+- se continuă cu instrucțiunea care urmează după if<br>
+- dacă nu există clauza else, se continuă cu instrucțiunea care urmează după if<br>
+    </p>
+
+    <h1>Instructiunea switch</h1>
+
+    <p>
+      Instrucțiunea switch permite executarea unor instrucțiuni, în funcție de egalitatea unei expresii cu anumite valori numerice constante:<br><br>
+
+      Sintaxa:<br>
+
+switch ( Expresie )<br>
+
+{<br>
+    case 1:<br>
+          Grup_Instructiuni_1;<br>
+          break;<br>
+    case 2:<br>
+          Grup_Instructiuni_2;<br>
+          break;<br>
+    …<br>
+    case N:<br>
+          Grup_Instructiuni_N;<br>
+          break;<br>
+    default:<br>
+          Grup_Instructiuni_default;<br>
+          break;<br>
+
+}<br><br>
+
+Mod de execuție:<br>
+
+- se evaluează Expresie<br>
+- dacă valoarea expresiei este egală cu una dintre valorile constante din clauzele case, se execută instrucțiunile din grupul de instrucțiuni corespunzător, apoi se trece la instrucțiunea de după switch<br>
+- dacă valoarea expresiei nu este egală cu niciuna dintre valorile constante din clauzele case, se verifică existența clausei default;<br>
+- dacă există clauza default, se execută instrucțiunile din grupul de instrucțiuni corespunzător clauzei default, apoi se trece la instrucțiunea de după  switch<br>
+- dacă nu există clauza default, se trece la instrucțiunea de după switch<br>
+    </p>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,125 @@
+*{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+}
+
+.header{
+  width:100%;
+  height:80px;
+  display:block;
+  background-color: black;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+}
+
+.inner_header{
+  width: 1000px;
+  height: 100%;
+  display: block;
+  margin: 0 auto;
+
+}
+
+.navigation{
+  float:right;
+  height:100%;
+
+}
+
+.navigation a{
+  height: 100%;
+  display:table;
+  float:left;
+  padding: 0px 30px;
+}
+
+.navigation a:last-child{
+  padding-right: 100px;
+
+}
+
+.navigation a li{
+  display: table-cell;
+  vertical-align: middle;
+  color: white;
+  height:100%;
+  font-family: 'Roboto', sans-serif;
+  font-size: 30;
+}
+
+.navigation a li:hover{
+  color: #8eb9ff;
+}
+
+img{
+  width: 100%;
+  height: 70%;
+}
+
+.p1{
+  padding:30px;
+  font-size: 30px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.sidebar {
+  background-color: #f2f2f2;
+  height: 100%;
+  width: 18%;
+  position: fixed;
+  z-index: 1;
+  top: 80px;
+  left: 0;
+  border-right: 1px solid black;
+  overflow-x: hidden;
+  padding-top: 16px;
+
+}
+
+button {
+  font-family: 'Roboto', sans-serif;
+  background-color: #e5e5e5;
+  border-radius: 4px;
+  border: 1px solid black ;
+  width:90%;
+  height:30px;
+  margin-left: 10px;
+  margin-bottom: 10px;
+}
+
+button:hover{
+  background-color: #c6c6c6;
+}
+
+button a:link {
+  color: black;
+}
+button a:visited {
+  color: black;
+}
+
+.main{
+  width:72%;
+  height:100%;
+  margin-left:23%;
+  margin-top: 100px;
+}
+
+.main > p, pre{
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
+  margin-top:10px;
+}
+
+h1{
+  font-family: 'Roboto', sans-serif;
+  margin-top:60px;
+}
+
+.graf_orientat{
+  width:500px;
+  height:auto;
+}

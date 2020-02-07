@@ -1,0 +1,202 @@
+<html>
+<head>
+  <title>Clasa a 10-a, divide et impera</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="style.css">
+<head/>
+<body>
+  <div class="header">
+    <div class="inner_header">
+      <ul class="navigation">
+        <a href = "clasa9.html"><li>Clasa a IX-a</li></a>
+        <a href = "clasa10.html"><li>Clasa a X-a</li></a>
+        <a href = "clasa11.html"><li>Clasa a XI-a</li></a>
+        <a href = "clasa12.html"><li>Clasa a XII-a</li></a>
+      </ul>
+  </div>
+  </div>
+
+  <div class = "sidebar">
+    <button><a href="clasa10.html">Liste simplu inlantuite</a></button>
+    <button><a href="liste_dublu_inlantuite.html">Liste dublu inlantuite</a></button>
+    <button><a href="subprograme.html">Subprograme</a></button>
+    <button><a href="divide_et_impera.html">Divide et impera</a></button>
+  </div>
+
+  <div class = "main">
+    <h1>Divide et impera</h1>
+    <pre>
+      Divide et impera este o clasă de algoritmi care funcționează pe baza tacticii divide et impera.
+      Prezentare generală:
+
+      Divide et impera se bazează pe principiul descompunerii problemei în două sau mai multe subprobleme
+      (mai ușoare), care se rezolvă, iar soluția pentru problema inițială se obține combinând soluțiile
+      subproblemelor. De multe ori, subproblemele sunt de același tip și pentru fiecare din ele se poate
+      aplica aceeași tactică a descompunerii în (alte) subprobleme, până când (în urma descompunerilor repetate)
+       se ajunge la probleme care admit rezolvare imediată.
+
+Nu toate problemele pot fi rezolvate prin utilizarea acestei tehnici. Se poate afirma că numărul celor
+ rezolvabile prin "divide et impera" este relativ mic, tocmai datorită cerinței ca problema să admită o
+ descompunere repetată.
+
+Divide et impera este o tehnică ce admite o implementare recursivă. Principiul general prin care se
+elaborează algoritmi recursivi este: "ce se întâmplă la un nivel, se întâmplă la orice nivel"
+(având grijă să asigurăm condițiile de terminare). Așadar, un algoritm prin divide et impera se
+elaborează astfel: la un anumit nivel avem două posibilități:
+
+1.s-a ajuns la o problemă care admite o rezolvare imediată (condiția de terminare), caz în care se
+rezolvă și se revine din apel;
+2.nu s-a ajuns în situația de la punctul 1, caz în care problema curentă este descompusă în
+(două sau mai multe) subprobleme, pentru fiecare din ele urmează un apel recursiv al funcției,
+după care combinarea rezultatelor are loc fie pentru fiecare subproblemă, fie la final, înaintea revenirii din apel.
+
+Aplicații:
+
+Maximul dintr-un vector:
+
+Se citește un vector cu n componente, numere naturale. Se cere să se tipărească valoarea maximă.
+
+Funcția căutată va genera valoarea maximă dintre numerele reținute în vector pe o poziție dintre
+ i și j (inițial, i=1, j=n). Pentru aceasta, se procedează astfel:
+
+- dacă i=j, valoarea maximă va fi v[i];
+- în caz contrar, se împarte vectorul în doi subvectori - presupunem varianta pentru paralelizare
+pe 2 procesoare. Se calculează mijlocul m al intervalului [i, j]: m = (i+j) div 2. Primul subvector
+ va conține componentele de la i la m, al doilea va conține componentele de la (m+1) la j; se rezolvă
+  subproblemele (aflându-se astfel maximul pentru fiecare din subvectori), iar soluția curentă va fi
+  dată de valoarea maximă dintre rezultatele celor două subprobleme.
+
+  #include < iostream >
+ using namespace std;
+ int v[10],n;
+
+ int max(int i, int j)
+ {
+   int a, b, m;
+   if (i==j) return v[i];
+   else
+   {
+     m = (i+j)/2;
+     a = max(i, m);
+     b = max(m+1, j);
+     if  (a>b) return a;
+     else return b;
+   }
+ }
+
+ int main( )
+ {
+   cout<<”n=”;cin>>n;
+   for (int i=1; i<=n; i++)
+   {
+     cout<<”v[“<< i << ”] = ” ;cin> > v[i];
+   }
+   cout<<”max=”<< max(1,n);
+   return 0;
+ }
+
+ Minimul dintr-un vector:
+
+ Se citește un vector cu n componente, numere naturale. Se cere să se tipărească valoarea minimă.
+
+ Funcția căutată va genera valoarea minimă dintre numerele reținute în vector pe o poziție dintre
+  i și j (inițial, i=1, j=n). Pentru aceasta, se procedează astfel:
+
+ - dacă i=j, valoarea minimă va fi v[i];
+ - în caz contrar, se împarte vectorul în doi subvectori - presupunem varianta pentru paralelizare
+  pe 2 procesoare. Se calculează mijlocul m al intervalului [i, j]: m = (i+j) div 2. Primul subvector
+  va conține componentele de la i la m, al doilea va conține componentele de la (m+1) la j; se rezolvă
+   subproblemele (aflându-se astfel minimul pentru fiecare din subvectori), iar soluția curentă va fi
+    dată de valoarea minimă dintre rezultatele celor două subprobleme.
+
+    #include < iostream >
+ using namespace std;
+ int v[10],n;
+
+ int min(int i, int j)
+ {
+   int a, b, m;
+   if (i==j) return v[i];
+   else
+   {
+     m = (i+j)/2;
+     a = min(i, m);
+     b = min(m+1, j);
+     if  (a < b) return a;
+     else return b;
+   }
+ }
+
+ int main( )
+ {
+   cout<<”n=”;cin>>n;
+   for (int i=1; i<=n; i++)
+   {
+     cout<<”v[“ << i << ”]=”; cin>>v[i];
+   }
+   cout<<”min=”<< min(1,n);
+   return 0;
+ }
+
+Căutare binară:
+
+Se citește un vector cu n componente numere întregi (numerele se presupun ordonate crescător)
+si o valoare întreagă ("nr"). Să se decidă dacă nr se găsește sau nu printre numerele citite,
+iar în caz afirmativ să se tipărească indicele componentei care conține această valoare.
+
+O rezolvare în care nr se compară pe rând cu toate cele n componente reperzintă o pierdere de
+performanță (nu exploatează faptul că cele n valori sunt în secvență crescătoare). Algoritmul care
+va fi propus este optim și se poate spune că face parte dintre algoritmii "clasici".
+
+Funcția care va fi implementată va decide dacă valoarea căutată se găsește printre numerele aflate
+pe poziții de indice cuprins între i și j (inițial, i=1, j=n). Pentru aceasta, se va proceda astfel:
+
+- dacă nr coincide cu valoarea de la mijloc, aflată pe poziția de indice (i+j)/2, se tipărește indicele
+și se revine din apel (problema a fost rezolvată).
+- în caz contrar, dacă mai sunt și alte elemente de analizat (adică i < j, deci nu au fost verificate toate
+pozițiile necesare), problema se descompune astfel:
+- dacă nr este mai mic decât valoarea testată (din mijloc), înseamnă că nu se poate afla pe pozițiile din
+partea dreaptă, întrucât acestea sunt cel puțin mai mari decât valoarea testată. Nr se poate găsi doar printre
+componentele cu indice între i și (i+j)/2 - 1, caz în care se reapelează funcția cu acești parametri;
+- dacă nr este mai mare decât valoarea testată (din mijloc), înseamnă că nu se poate afla în stânga; se poate
+ găsi doar printre componentele cu indicele între (i+j)/2 + 1 și j, caz în care se reapelează funcția cu acești parametri.
+- dacă nu mai sunt alte elemente de analizat (pentru că i=j și valoarea din mijloc, v[i], nu coincide cu nr),
+ se concluzionează că nr nu apare în cadrul vectorului.
+- Această problemă nu mai necesită analiza tuturor subproblemelor în care se descompune, ea se reduce la o
+singură subproblemă, iar partea de combinare a soluțiilor dispare. În linii mari, această rezolvare este
+tot de tip "divide et impera".
+
+#include < iostream >
+ using namespace std;
+ int v[100], n, nr;
+
+ void caut(int i, int j)
+ {
+   int m = (i+j)/2;
+   if (nr==v[m])
+     cout<<”gasit, indice=” << m;
+   else
+     if (i < j)
+       if  (nr < v[m])
+         caut(i, m-1);
+       else caut(m+1, j);
+     else cout<<”nu a fost gasit.”;
+ }
+
+ int main( )
+ {
+     cout<<”n=”; cin>>n;
+     for (int i=1; i<=n; i++)
+     {
+       cout<<”v[“<< i <<”]=”; cin>>v[i];
+     }
+     cout<<”nr=”; cin>>nr;
+     caut (0,n);
+     return 0;
+ }
+</pre>
+  </div>
+
+
+</body>
+</html>

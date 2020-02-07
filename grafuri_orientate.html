@@ -1,0 +1,124 @@
+<html>
+<head>
+  <title>Clasa a 11-a, grafuri orientate</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="style.css">
+<head/>
+<body>
+  <div class="header">
+    <div class="inner_header">
+      <ul class="navigation">
+        <a href = "clasa9.html"><li>Clasa a IX-a</li></a>
+        <a href = "clasa10.html"><li>Clasa a X-a</li></a>
+        <a href = "clasa11.html"><li>Clasa a XI-a</li></a>
+        <a href = "clasa12.html"><li>Clasa a XII-a</li></a>
+      </ul>
+  </div>
+  </div>
+
+  <div class = "sidebar">
+    <button><a href="clasa11.html">Grafuri neorientate</a></button>
+    <button><a href="grafuri_orientate.html">Grafuri orientate</a></button>
+    <button><a href="backtracking.html">Backtracking</a></button>
+  </div>
+
+  <div class = "main">
+    <h1>Grafuri orientate</h1>
+
+    <pre>
+      Definiție. Se numeşte graf orientat sau digraf o pereche ordonată de mulțimi notată G=(V, U), unde:
+
+V este o mulțime finită şi nevidă ale cărei elemente se numesc noduri sau vârfuri;
+U este o mulțime de perechi ordonate de elemente distincte din V ale cărei elemente se numesc arce.
+
+Exemplu:
+    </pre>
+
+    <img class="graf_orientat" src="graf-orientat.png" alt="graf-orientat" >
+
+    <pre>
+      V={1,2,3,4,5,6}
+      U={(1,6),(2,1),(2,4),(3,2),(4,2),(5,4),(6,1),(6,4)}
+
+Observăm că arcele (1,6) și (6,1) sunt distincte.
+
+Definiție. Se numeşte graf orientat o pereche ordonată de mulțimi notată G=(V, U), unde:
+
+- V este o mulțime, finită şi nevidă, ale cărei elemente se numesc noduri sau vârfuri;
+- U este o mulțime, de perechi ordonate de elemente din V, ale cărei elemente se numesc arce.
+Această definiție diferă de prima definiție prin faptul ca acum nu se mai spune despre extremitățile unui arc
+ca trebuie să fie distincte. În baza acestei definiții, sunt permise şi arce de genul: u=(x,x) unde x∈V;
+ aceste arce se numesc bucle.
+
+ Grade:
+
+ Definiție. Fie G=(V, U) un graf orientat și x un nod al său.
+
+- Se numeşte grad exterior al nodului x, numărul arcelor de forma (x,y) (adică numărul arcelor care ies din x),
+notat d+(x).
+- Se numeşte grad interior al nodului x, numărul arcelor de forma (y,x) (adică numărul arcelor care intră în x),
+ notat d-(x).
+
+Matrce de adiacenta:
+
+Fie G=(V,U) un graf orientat cu n noduri, în care nu există mai multe arce de la un nod la altul. Matricea de adiacență
+a grafului este o matrice cu n linii și n coloane și elemente 0 sau 1, astfel:
+
+- Ai,j=1 dacă există arcul (i,j)
+- Ai,j=0 dacă există nu arcul (i,j)
+
+Graf parțial, subgraf:
+
+Definiție. Fie G=(V, U) un graf orientat. Se numeşte graf parțial al grafului G, graful orientat G1=(V, U1), unde U1 ⊆ U.
+
+Din definiție rezultă:
+
+- Un graf parțial al unui graf orientat G=(V,U), are aceeaşi mulțime de vârfuri ca şi G, iar mulțimea arcelor este o
+submulțime a lui U sau chiar U.
+- Fie G=(V, U) un graf orientat. Un graf parțial al grafului G, se obține păstrând vârfurile şi
+eliminând eventual nişte arce (se pot elimina şi toate arcele sau chiar nici unul).
+Definiție. Fie G=(V, U) un graf orientat. Se numeşte subgraf al grafului G graful orientat G1=(V1,U1) unde V1 ⊆ V iar
+U1 conține toate arcele din U care au extremitățile în V1.
+
+Din definiție rezultă:
+
+- Fie G=(V,U) un graf orientat. Un subgraf al grafului G, se obține ştergând eventual anumite
+vârfuri şi odată cu acestea şi arcele care le admit ca extremitate (nu se pot şterge toate vârfurile deoarece
+s-ar obține un graf cu mulțimea vârfurilor vidă).
+
+Lanț. Drum:
+
+Definiție: Fie G=(V, U) un graf orientat. Se numește lanț, în graful G, o succesiune de arce, notată
+L = (u1 , u2 ,..., uk) cu proprietatea ca oricare două arce consecutive au o extremitate comună (nu are importanță
+orientarea arcelor).
+
+sau
+
+Definiție: Fie G=(V, U) un graf orientat. Se numește lanț, în graful G, o succesiune de noduri, notată
+L = (x1 , x2 ,..., xp) cu proprietatea ca oricare două noduri consecutive sunt adiacente.
+
+Lungimea unui lanț este egală cu numărul de arce din care este alcătuit.
+
+Primul nod și ultimul nod dintr-un lanț formează extremitățile lanțului.
+
+Definiție. Fie G=(V, U) un graf orientat. Se numește drum în graful G o succesiune de noduri, notată
+D = (x1 , x2 ,..., xk), cu proprietatea că pentru orice 1 ≤ i < k, (xi,xi+1) este arc în G.
+
+Lungimea unui drum este egală cu numărul de arce din care este alcătuit.
+
+Pentru un drum D = (x1 , x2 ,..., xk), nodurile x1 și xk reprezintă extremitățile – inițială, respectiv finală.
+
+Un lanț (drum) se numește elementar dacă în el nu se repetă noduri. Un lanț (drum) se numește simplu dacă în el nu
+se repetă arce.
+
+Circuit:
+
+Definiție: Se numește circuit un drum simplu în care extremitatea inițială și finală sunt egale. Se numește
+circuit elementar un circuit în care, cu excepția extremităților, nu se repetă noduri.
+
+Lungimea unui circuit este reprezentată de numărul de arce din care acesta este alcătuit.
+
+    </pre>
+
+</body>
+</html>

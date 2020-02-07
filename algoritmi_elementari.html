@@ -1,0 +1,140 @@
+<html>
+<head>
+  <title>Clasa a 9-a, algoritmi elementari</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="style.css">
+<head/>
+<body>
+  <div class="header">
+    <div class="inner_header">
+      <ul class="navigation">
+        <a href = "clasa9.html"><li>Clasa a IX-a</li></a>
+        <a href = "clasa10.html"><li>Clasa a X-a</li></a>
+        <a href = "clasa11.html"><li>Clasa a XI-a</li></a>
+        <a href = "clasa12.html"><li>Clasa a XII-a</li></a>
+      </ul>
+  </div>
+  </div>
+
+  <div class = "sidebar">
+    <button><a href="clasa9.html">Tipuri de variabile</a></button>
+    <button><a href="algoritmi_elementari.html">Algoritmi elementari</a></button>
+    <button><a href="structuri_repetitive.html">Structuri repetitive</a></button>
+    <button><a href="structuri_alternative.html">Structuri alternative</a></button>
+    <button><a href="tablouri.html">Tablouri</a></button>
+  </div>
+
+  <div class = "main">
+    <h1>1.Verificare numar palindrom:</h1>
+    <p>
+      Palindromul este un numar care citit  invers se citeste la fel<br>
+
+      exemplu: 222<br>
+
+      Vom folosi 4 variabile de tip intreg(int)<br>
+
+      vom determina daca un numar este palindrom<br>
+
+      Daca numarul nu este palindrom se afiseaza inversul lui<br><br>
+
+
+
+      int main()<br>
+      {<br>
+      int copie;<br>
+      int invers; // acum variabila nu are o valoarea declarata<br>
+      int c;<br>
+      int n;<br>
+
+
+       invers=0; //acum variabila este declarata cu o anumita valoarea<br>
+
+
+      cout<<"Introduceti numarul pentru al testa daca este palindrom: ";<br>
+      cin>>n;<br>
+      copie=n;<br>
+      while(n!=0)<br>
+      {<br>
+      c=n%10;<br>
+      invers=invers*10+c;<br>
+      n=n/10;<br>
+      }<br>
+      if(copie==invers)<br>
+      cout<<"Numarul tastat este palindrom \n";<br>
+      else<br>
+      cout<<"Numarul tastat nu este palindrom \n";<br>
+      cout<<"Inversul numarului introdus este " << invers;<br>
+      return 0;<br>
+      }<br>
+
+</p>
+
+<h1>2.Cmmdc si cmmmc</h1>
+<p>
+  Se citesc de la tastatura doua numere a si b. Determinati si afisati cel mai mic multiplu comun al acestora.
+Codul de mai jos afla cel mai mare divizor comun (cmmdc) al celor doua numere pentru ca mai apoi sa-l foloseasca pentru a determina cel mai mic multiplu comun (cmmmc) folosind formula consacrata,
+cmmmc = (a*b) / cmmdc.<br><br>
+
+int a,b,x,y;<br>
+int main()<br>
+{<br>
+// se citesc numerele a si b<br>
+cout<<"Introduceti numerele a si b: "<<endl;<br>
+cin>>a>>b;<br>
+// se copiaza numerele a si b in variabilele x si y<br>
+x=a;<br>
+y=b;<br>
+// se determina cmmdc-ul dintre a si b folosind variabilele x si y<br>
+while(x!=y)<br>
+    {<br>
+        if(x>y)<br>
+            x=x-y;<br>
+        else<br>
+            y=y-x;<br>
+    }<br>
+// in urma executarii instructiunii while cmmdc-ul este memorat acum in variabila x<br>
+// se afiseaza cmmmc dintre cele doua numere folosind formula de determinare acestuia cu ajutorul cmmdc<br>
+cout<<"cmmmc = "<<(a*b)/x;<br>
+}<br>
+</p>
+
+<h1>3.Maximul si minimul unui nr</h1>
+<p>Sa se afiseze minimul si maximul dintre 2 numere.</p>
+<p>
+  int main(){<br>
+    int a;<br>
+    int b;<br>
+    cout<<"a=";cin>>a;<br>
+    cout<<"b=";cin>>b;<br>
+
+    if(a>b)<br>
+    {cout<<"a este maximul"<< endl;<br>
+    cout<<"b este minimul";<br>
+    }<br>
+    else{<br>
+      cout<<"b este maximul"<< endl;<br>
+      cout<<"a este minimul"<< endl;<br>
+    }<br>
+
+  }<br>
+</p>
+
+  <h1>4.Paritatea unui numar.</h1>
+
+  <p>Sa se verifice daca un numar este par sau impar.</p>
+  <p>
+    int main(){<br>
+      int n;<br>
+      cout<"n=";cin>>n;<br>
+      if (n%2==0)<br>
+      cout<<"n este nr. par";<br>
+      else<br>
+      cout<<"n este nr. impar";<br>
+    }<br>
+  </p>
+
+
+
+</div>
+</body>
+</html>

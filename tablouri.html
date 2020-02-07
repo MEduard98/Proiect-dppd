@@ -1,0 +1,109 @@
+<html>
+<head>
+  <title>Clasa a 9-a, tablouri</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="style.css">
+<head/>
+<body>
+  <div class="header">
+    <div class="inner_header">
+      <ul class="navigation">
+        <a href = "clasa9.html"><li>Clasa a IX-a</li></a>
+        <a href = "clasa10.html"><li>Clasa a X-a</li></a>
+        <a href = "clasa11.html"><li>Clasa a XI-a</li></a>
+        <a href = "clasa12.html"><li>Clasa a XII-a</li></a>
+      </ul>
+  </div>
+  </div>
+
+  <div class = "sidebar">
+    <button><a href="clasa9.html">Tipuri de variabile</a></button>
+    <button><a href="algoritmi_elementari.html">Algoritmi elementari</a></button>
+    <button><a href="structuri_repetitive.html">Structuri repetitive</a></button>
+    <button><a href="structuri_alternative.html">Structuri alternative</a></button>
+    <button><a href="tablouri.html">Tablouri</a></button>
+  </div>
+
+  <div class = "main">
+<h1>Vectori</h1>
+<pre>
+  Un tablou este o colecţie de date de acelaşi tip, memorate într-o zonă de memorie contiguă, reunite sub un nume
+  comun. Declararea unei variabile de tip tablou:
+tip_dată nume[nr_elemente];
+
+Exemple:
+
+int a[20];
+float b[10];
+char c[5];
+unde nr_elemente este o constantă întreagă ce specifică numărul de elemente ale vectorului;
+precizarea valorii sale se poate face şi printr-o constantă simbolică, de exemplu:
+
+const int DIM=100;
+int a[DIM];
+
+Accesul la un element al tabloului se poate face pe baza indicelui acelui element (numerotarea începe de la 0).
+ De exemplu, elementele tabloului a declarat mai sus sunt a[0], a[1], a[2].
+
+Operatii:
+
+1.Citirea unui vector
+
+int v[100], n, i;
+cout<"n=";  cin>>n;
+for(i=0; i< n ; i++)
+{
+  cout << "v["<< i <<"]=";   cin>>v[i];}
+
+2.Afisarea unui vector
+
+for(i=0;i< n; i++)
+cout<< v[i]<<' ';
+
+3.Determinarea sumei elementelor unui vector
+
+int s=0;
+for(i=0;i< n; i++)
+ s = s+v[i];
+
+4.Determinarea minimului dintr-un vector
+
+int min=v[0];
+for(i=1;i< n; i++)
+if (v[i]< min) min=v[i];
+
+5.Sa se verifice daca toate elementele unui vector sunt numere pozitive:
+
+sw=1;
+for (i=0;i< n && sw; i++)
+if (v[i]< 0) sw=0;
+if(sw==1)
+cout<<"Vectorul are toate elementele pozitive";
+else cout<<"Vectorul nu are toate elementele pozitive";
+
+6.Cautarea binara
+
+st=0;
+dr=n-1;
+gasit=0;
+while (!gasit && st<=dr)
+{mij=(st+dr)/2;
+if (a[mij]==x) gasit=1;
+  else if (a[mij]>x) dr=mij-1;
+     else st=mij+1;}
+if (gasit) cout<< x<<” se gaseste pe pozitia “<< mij;
+else cout<< x<<” nu se afla in vector”;
+
+7.Sortarea unui vector (metoda selectiei directe)
+
+for(i=0; i< n-1; i++)
+
+for(j=i+1; j< n; j++)
+
+if (v[i]>v[j])
+
+{aux=v[i]; v[i]=v[j]; v[j]=aux;}
+</pre>
+</div>
+</body>
+</html>

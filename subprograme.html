@@ -1,0 +1,89 @@
+<html>
+<head>
+  <title>Clasa a 10-a, subprograme</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="style.css">
+<head/>
+<body>
+  <div class="header">
+    <div class="inner_header">
+      <ul class="navigation">
+        <a href = "clasa9.html"><li>Clasa a IX-a</li></a>
+        <a href = "clasa10.html"><li>Clasa a X-a</li></a>
+        <a href = "clasa11.html"><li>Clasa a XI-a</li></a>
+        <a href = "clasa12.html"><li>Clasa a XII-a</li></a>
+      </ul>
+  </div>
+  </div>
+
+  <div class = "sidebar">
+    <button><a href="clasa10.html">Liste simplu inlantuite</a></button>
+    <button><a href="liste_dublu_inlantuite.html">Liste dublu inlantuite</a></button>
+    <button><a href="subprograme.html">Subprograme</a></button>
+    <button><a href="divide_et_impera.html">Divide et impera</a></button>
+  </div>
+
+  <div class = "main">
+    <h1>Subprograme</h1>
+    <pre>
+      Subprogramele reprezinta functii definite de catre utilizator.
+      Ele sunt identificate prin nume si pot fi apelate in interoriul unui program.
+
+      Un subprogram (o functie) are forma urmatoare:
+
+      tip_returnat nume_subprogram(parametri_formali) //acesta fiind si antetul programului
+ {
+      //instructiunea sau instructiunile subprogramului
+ }
+
+tip_returnat = tipul rezultatului calculat si returnat de catre subprogram
+             -> poate fi de tipul: int, char, char*, long, float, void, etc.
+             -> in cazul in care tipul returnat nu este specificat acesta este implicit int
+
+nume_subprogram = numele dat subprogramului de catre cel care il defineste
+                -> acest nume se foloseste pentru a apela subprogramul
+
+parametri_formali = lista de declaratii de variabile separate prin virgula
+                  -> aceasta lista poate sa fie si vida
+
+                  Subprogramele se scriu inainte de functia “int main()”.
+
+Spre exemplu, in problema de mai jos, (pe care o puteti gasi si aici),
+ avem un subprogram cu numele “cifreImpare” (intre liniile 4 si 19). Acesta are doar un parametru formal – n,
+ de tipul int.
+
+Antetul acestui subprogram este “int cifreImpare(int n)”.
+
+#include < iostream >
+using namespace std;
+int n;
+int cifreImpare(int n)
+{
+    int s = 0, cn = n, p = 1;
+    while (n > 0)
+    {
+	    if (n % 2 == 0)
+	    {
+	        s = n % 10 * p + s;
+	        p = p * 10;
+	    }
+	    n = n / 10;
+    }
+    if (s == 0 || s == cn)
+	    return -1;
+    return s;
+}
+
+int main()
+{
+    cin >> n;
+    cout << cifreImpare(n);
+    return 0;
+}
+
+</pre>
+  </div>
+
+
+</body>
+</html>
